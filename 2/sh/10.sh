@@ -1,0 +1,1 @@
+wc ../../data/hightemp.txt
