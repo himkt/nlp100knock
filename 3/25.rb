@@ -22,7 +22,4 @@ open('../data/uk.json', 'r') do |input|
   end
 end
 
-basic_info.each do |k, v|
-  puts k
-  puts v
-end
+p basic_info

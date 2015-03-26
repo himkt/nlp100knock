@@ -25,6 +25,7 @@ end
 basic_info_scribed = Hash.new
 
 basic_info.each do |k, v|
+  v = v.gsub(/\[.*\]/, ' ')
   if vv = v.match(/('+)(.*?)('+)/)
     basic_info_scribed[k] = vv[2]
   else
