@@ -24,5 +24,9 @@ end
 
 basic_info.each do |k, v|
   puts k
-  puts v
+  if vv = v.match(/('+)(.*?)('+)/)
+    print vv[2]
+  else
+    print v
+  end
 end
