@@ -15,7 +15,7 @@ open('../data/uk.json', 'r') do |input|
         else
           raw = item.split('=')
           key = raw[0].sub(/^\|/,'').rstrip
-          basic_info[key] = raw[1].strip.gsub(/\<.*?>/,'')
+          basic_info[key] = raw[1].strip#.gsub(/\<.*?>/,'')
         end
       end
     end

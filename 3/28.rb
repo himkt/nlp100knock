@@ -23,9 +23,9 @@ open('../data/uk.json', 'r') do |input|
 end
 
 def remove_emphasized_link(basic_info)
-  basic_info_scribed = Hash.new
+  basic_info_removed_emphasized_link = Hash.new
   basic_info.each do |k, v|
-    basic_info_scribed[k] = v.gsub(/\'+/, ' ')
+    basic_info_removed_emphasized_link[k] = v.gsub(/\'+/, ' ')
 =begin
     # 正規表現のブロックマッチを使った解法
     if vv = v.match(/('+)(.*?)('+)/)
@@ -35,11 +35,23 @@ def remove_emphasized_link(basic_info)
     end
 =end
   end
-  return basic_info_scribed
+  return basic_info_removed_emphasized_link
 end
 
+def remove_internal_link(basic_info_removed_emphasized_link)
+  basic_info_removed_internal_link = Hash.new
+  basic_info_removed_emphasized_link.each do |k, v|
+    basic_info_removed_internal_link[k] = v.gsub(/\[+/, ' ').gsub(/\]+/, ' ')
+  end
+  return basic_info_removed_internal_link
+end
 
+def remove_other_link(basic_info_removed_internal_link)
+  basic_info_removed_other_link = Hash.new
+  basic_info_removed_internal_link.each do |k, v|
+    basic_info_removed_other_link[k] = v.gsub(/{+/, ' ').gsub(/}+/, ' ')
+  end
+  return basic_info_removed_other_link
+end
 
-
-
-p remove_emphasized_link(basic_info)
+p remove_other_link(remove_internal_link(remove_emphasized_link(basic_info)))

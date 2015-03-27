@@ -41,9 +41,17 @@ end
 def remove_internal_link(basic_info_removed_emphasized_link)
   basic_info_removed_internal_link = Hash.new
   basic_info_removed_emphasized_link.each do |k, v|
-    basic_info_removed_internal_link[k] = v.gsub(/\[+/, '').gsub(/\]+/, ' ')
+    basic_info_removed_internal_link[k] = v.gsub(/\[+/, ' ').gsub(/\]+/, ' ')
   end
   return basic_info_removed_internal_link
 end
 
-p remove_internal_link(remove_emphasized_link(basic_info))
+def remove_other_link(basic_info_removed_internal_link)
+  basic_info_removed_other_link = Hash.new
+  basic_info_removed_internal_link.each do |k, v|
+    basic_info_removed_other_link[k] = v.gsub(/{+/, ' ').gsub(/}+/, ' ')
+  end
+  return basic_info_removed_other_link
+end
+
+p "URL: http://en.wikipedia.org/wiki/File:#{remove_other_link(remove_internal_link(remove_emphasized_link(basic_info)))['国旗画像']}"
