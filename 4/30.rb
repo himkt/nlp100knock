@@ -23,5 +23,5 @@ end
 
 # list = morphize
 
-# p list.first(3)
+# p list.first(100)
 # p list.size
