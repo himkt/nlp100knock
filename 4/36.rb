@@ -2,11 +2,17 @@
 require './30'
 
 list = morphize
-list.each do |arr|
-  str = []
-  flag = false
-  arr.each do |item|
-    (str.push(item[:surface]); flag = true) if item[:pos] == '名詞'
-    (p str if str.size > 1; str = []; flag = false) if item[:pos] != '名詞'
+
+def tf(list)
+  count = Hash.new
+  list.each do |arr|
+    arr.each do |item|
+      count[item[:base]] = 1 unless count[item[:base]]
+      count[item[:base]] += 1 if count[item[:base]]
+    end
   end
+  count = count.sort{|(k1, v1), (k2, v2)| v2 <=> v1}
+  return count
 end
+
+# count = tf(list)
