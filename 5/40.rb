@@ -2,28 +2,27 @@
 require 'natto'
 
 class Morph
-  def initialize
+  def initialize(word)
     @natto = Natto::MeCab.new
+    @word = word
+    p return_morpheme(word) 
   end
   def return_morpheme(word)#,arr)
-    item = @natto.parse(word).split(/\n/)
-    item.each do |word|
-      print word
-      sleep(1) if word =~ /^EOS/
+    if word =~ /^EOS/
+      return 'EOS'
+    else
+      @natto.parse(word).split(/\n/).each do |item|
+        return item unless item =~ /^EOS/
+      end
     end
-    #@natto.parse(word).split(/\t/).each_with_index do |surface, index|
-    #  p surface
-    #  p index
-    #end
   end
 end
 
-morph = Morph.new
 
 open('../data/neko.txt.cabocha', 'r') do |input|
   while word = input.gets
-    word = word.gsub(/\-/, '').sub(/D/, '').gsub('|', '').gsub(/\s/, '')
-    morph.return_morpheme(word)
+    word = word.chomp.gsub(/\-|D|\s|\|/, '')
+    Morph.new(word) 
   end
 end
 
