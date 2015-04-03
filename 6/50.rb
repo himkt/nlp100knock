@@ -2,7 +2,7 @@
 
 open('../data/nlp.txt', 'r') do |input|
   text = input.read
-  text.split(/\.(?:\n|\s)/).each do |sentense|
+  text.split(/(?:\.|\;\|\?|\!)(?:\n|\s)/).each do |sentense|
     p sentense
   end
 =begin
