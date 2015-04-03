@@ -17,19 +17,22 @@ class Morph
   end
 end
 
-natto = Natto::MeCab.new
 
+=begin
 list = []
+natto = Natto::MeCab.new
 
 open('../data/neko.txt.cabocha', 'r') do |input|
   arr = []
   while line = input.gets
     line = line.chomp.gsub(/\-|D|\s|\|/, '')
     natto.parse(line).split(/\n/).each do |morph|
-      (list.push(arr) if arr.size != 0; arr = []; next) if morph =~ /^EOS/
-      arr.push(Morph.new(morph))
+      next if morph =~ /^EOS|空白/
+        arr.push(Morph.new(morph))
+      (list.push(arr) if arr.size != 0; arr = []; next) if morph =~ /。/
     end
   end
 end
 
-p list[3]
+p list
+=end
