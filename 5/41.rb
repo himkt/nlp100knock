@@ -19,7 +19,7 @@ catch(:foo) do
   end
 end
 
-p list[2]
+p list
 
 class Chunk
   def initialize(line)
