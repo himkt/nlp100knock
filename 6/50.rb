@@ -3,7 +3,7 @@
 open('../data/nlp.txt', 'r') do |input|
   text = input.read
   text.scan(/[A-Z].*?(?:\.|\,|!|\?)\s/).each do |sentense|
-    p sentense
+    puts sentense
   end
 =begin
   while line = input.gets
