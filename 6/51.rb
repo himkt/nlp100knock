@@ -1,13 +1,7 @@
 # -*- conding: utf-8 -*-
-require 'treat'
-include Treat::Core::DSL
 
-while line = gets
-  line.chomp.split(/\s/).each do |word|
-    begin
-      p word.gsub(/,|\.|\s|\(|\)/, '').stem
-    rescue
-      p word
-    end
+File.foreach('../data/50.nlp.txt') do |line|
+  line.split(/\s/).each do |word|
+    puts word.gsub(/\,|\.|\(|\)|\[|\]|"|'|-|\?|\!/, '')
   end
 end

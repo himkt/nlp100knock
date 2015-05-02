@@ -1,24 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    birch (0.0.8)
-    json (1.8.2)
-    mime-types (1.25.1)
-    progressbar (0.21.0)
-    rubyzip (0.9.9)
-    schiphol (1.0.1)
-      progressbar (>= 0.10.0)
-      rubyzip (~> 0.9.9)
-    treat (2.1.0)
-      birch
-      schiphol
-      yomu
-    yomu (0.2.2)
-      json (~> 1.8)
-      mime-types (~> 1.23)
+    stemmify (0.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  treat
+  stemmify
