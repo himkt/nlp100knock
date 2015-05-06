@@ -18,7 +18,6 @@ class Morph
 end
 
 
-=begin
 list = []
 natto = Natto::MeCab.new
 
@@ -34,5 +33,4 @@ open('../data/neko.txt.cabocha', 'r') do |input|
   end
 end
 
-p list
-=end
+p list[2]
