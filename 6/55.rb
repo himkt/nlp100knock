@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+=begin
+入力文中の人名をすべて抜き出せ．
+=end
+
+=begin
+54と同様.
+=end
+
 elems = Array.new
 data = false
 

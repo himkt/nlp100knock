@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
 
+=begin
+「パトカー」＋「タクシー」の文字を先頭から交互に連結して文字列「パタトクカシーー」を得よ．
+=end
+
 str1 = 'パトカー'
 str2 = 'タクシー'
 
-i1 = str1.size
-i2 = str2.size
-
-if i1 >= i2
-  i = i1
-else
-  i = i2
-end
-
-j = 0
-
-while j < i
-  print "#{str1[j]}#{str2[j]}"
-  j += 1
+i = 0
+while (c1 = str1[i]) &&  (c2 = str2[i])
+  print "#{c1}#{c2}"
+  i += 1
 end

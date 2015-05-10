@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 
-i = 0
+=begin
+行数をカウントせよ．確認にはwcコマンドを用いよ．
+=end
 
-open('../../data/hightemp.txt') do |input|
-  while line = input.gets
-    i += 1
-  end
-end
-
-p i
+p File.read('../../data/hightemp.txt').count("\n")
