@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 require 'natto'
 
+=begin
+形態素を表すクラスMorphを実装せよ．
+このクラスは表層形（surface），基本形（base），品詞（pos），品詞細分類1（pos1）
+をメンバ変数に持つこととする．
+さらに，CaboChaの解析結果（neko.txt.cabocha）を読み込み，
+各文をMorphオブジェクトのリストとして表現し，3文目の形態素列を表示せよ．
+=end
+
 class Morph
   def initialize(morph)
     @surface, block = morph.split(/\t/)
@@ -33,4 +41,6 @@ open('../data/neko.txt.cabocha', 'r') do |input|
   end
 end
 
-p list[2]
+if $0 == __FILE__
+  p list[2]
+end

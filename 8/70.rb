@@ -9,7 +9,10 @@ sentiment.txtを作成したら，正例（肯定的な文）の数と負例（�
 =end
 
 =begin
-方針:特になし
+方針: 特になし
+確認:
+正例: cat sentiment.txt| grep '\+1'| wc
+負例: cat sentiment.txt| grep '\-1'| wc
 =end
 
 data = Array.new

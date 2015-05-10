@@ -1,25 +1,18 @@
 # -*- coding: utf-8 -*-
 require './40'
 
-list = []
-natto = Natto::MeCab.new
+=begin
+40に加えて，文節を表すクラスChunkを実装せよ．
+このクラスは形態素（Morphオブジェクト）のリスト（morphs），
+係り先文節インデックス番号（dst），
+係り元文節インデックス番号のリスト（srcs）
+をメンバ変数に持つこととする．
+さらに，入力テキストのCaboChaの解析結果を読み込み，
+１文をChunkオブジェクトのリストとして表現し，
+8文目の文節の文字列と係り先を表示せよ．
+第5章の残りの問題では，ここで作ったプログラムを活用せよ
+=end
 
-catch(:foo) do
-  open('../data/neko.txt.cabocha', 'r') do |input|
-    arr = []
-    while line = input.gets
-      line = line.chomp.gsub(/\-|D|\s|\|/, '')
-      natto.parse(line).split(/\n/).each do |morph|
-        throw :foo if list.size == 3
-        next if morph =~ /^EOS|空白/
-        arr.push(Morph.new(morph))
-        (list.push(arr) if arr.size != 0; arr = []; next) if morph =~ /。/
-      end
-    end
-  end
-end
-
-p list
 
 class Chunk
   def initialize(line)
