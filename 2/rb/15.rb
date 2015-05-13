@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+=begin
+自然数Nをコマンドライン引数などの手段で受け取り，
+入力のうち末尾のN行だけを表示せよ．
+確認にはtailコマンドを用いよ．
+=end
+
 N = ARGV[0].to_i
 str = ''
 
@@ -13,6 +19,6 @@ arr = str.split("\n")
 i = N
 
 N.times do
-  p arr[arr.size-i]
+  puts arr[arr.size-i]
   i -= 1
 end

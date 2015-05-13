@@ -6,10 +6,10 @@
 確認にはpasteコマンドを用いよ
 =end
 
-output = open('./13.output.tsv', 'w')
+output = open('../../data/13.output.tsv', 'w')
 
-open('./col1.txt', 'r') do |input1|
-  input2 = open('./col2.txt', 'r')
+open('../../data/col1.txt', 'r') do |input1|
+  input2 = open('../../data/col2.txt', 'r')
   while line1 = input1.gets
     line2 = input2.gets
     output.print("#{line1.chomp}\t#{line2.chomp}\n")

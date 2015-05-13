@@ -6,8 +6,8 @@
 確認にはcutコマンドを用いよ．
 =end
 
-o1 = open('./col1.txt', 'w')
-o2 = open('./col2.txt', 'w')
+o1 = open('../../data/col1.txt', 'w')
+o2 = open('../../data/col2.txt', 'w')
 
 open('../../data/hightemp.txt', 'r') do |input|
   while line = input.gets
