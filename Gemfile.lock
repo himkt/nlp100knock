@@ -3,8 +3,9 @@ GEM
   specs:
     ffi (1.9.8)
     gnuplot (2.6.2)
-    natto (0.9.9)
+    natto (1.0.0)
       ffi (>= 1.9.0)
+    stemmify (0.0.2)
 
 PLATFORMS
   ruby
@@ -12,3 +13,4 @@ PLATFORMS
 DEPENDENCIES
   gnuplot
   natto
+  stemmify
