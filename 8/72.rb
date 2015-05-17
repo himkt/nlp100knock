@@ -39,4 +39,5 @@ end
 if $0 == __FILE__
   p pos_vector.size
   p neg_vector.size
+  # p (pos & neg).size
 end
