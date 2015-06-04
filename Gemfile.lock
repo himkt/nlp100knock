@@ -5,6 +5,7 @@ GEM
     gnuplot (2.6.2)
     natto (1.0.0)
       ffi (>= 1.9.0)
+    redis (3.2.1)
     stemmify (0.0.2)
 
 PLATFORMS
@@ -13,4 +14,5 @@ PLATFORMS
 DEPENDENCIES
   gnuplot
   natto
+  redis
   stemmify
