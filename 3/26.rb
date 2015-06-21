@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+=begin
+25の処理時に，
+テンプレートの値から
+MediaWikiの強調マークアップ（弱い強調，強調，強い強調のすべて）を除去して
+テキストに変換せよ（参考: マークアップ早見表）．
+=end
+
 basic_info = Hash.new
 
 open('../data/uk.json', 'r') do |input|
@@ -38,8 +45,4 @@ def remove_emphasized_link(basic_info)
   return basic_info_scribed
 end
 
-
-
-
-
-p remove_emphasized_link(basic_info)
+puts remove_emphasized_link(basic_info)
