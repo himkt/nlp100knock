@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+=begin
+記事中に含まれる「基礎情報」テンプレートのフィールド名と値を抽出し，
+辞書オブジェクトとして格納せよ
+=end
+
 basic_info = Hash.new
 
 open('../data/uk.json', 'r') do |input|
@@ -22,4 +27,4 @@ open('../data/uk.json', 'r') do |input|
   end
 end
 
-p basic_info
+puts basic_info
