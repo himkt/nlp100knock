@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 
+=begin
+テンプレートの内容を利用し
+，国旗画像のURLを取得せよ.
+（ヒント: MediaWiki APIのimageinfoを呼び出して，
+ファイル参照をURLに変換すればよい）
+=end
+
 basic_info = Hash.new
 
 open('../data/uk.json', 'r') do |input|
