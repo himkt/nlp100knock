@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+=begin
+27の処理に加えて，
+テンプレートの値からMediaWikiマークアップを可能な限り除去し，
+国の基本情報を整形せよ．
+=end
+
 basic_info = Hash.new
 
 open('../data/uk.json', 'r') do |input|
@@ -54,4 +60,4 @@ def remove_other_link(basic_info_removed_internal_link)
   return basic_info_removed_other_link
 end
 
-p remove_other_link(remove_internal_link(remove_emphasized_link(basic_info)))
+puts remove_other_link(remove_internal_link(remove_emphasized_link(basic_info)))
