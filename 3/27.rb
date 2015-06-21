@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 
+=begin
+26の処理に加えて，
+テンプレートの値からMediaWikiの内部リンクマークアップを除去し，
+テキストに変換せよ（参考: マークアップ早見表）．
+=end
+
 basic_info = Hash.new
 
 open('../data/uk.json', 'r') do |input|
@@ -46,4 +52,4 @@ def remove_internal_link(basic_info_removed_emphasized_link)
   return basic_info_removed_internal_link
 end
 
-p remove_internal_link(remove_emphasized_link(basic_info))
+puts remove_internal_link(remove_emphasized_link(basic_info))
