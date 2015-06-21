@@ -8,7 +8,7 @@ open('../data/uk.json', 'r') do |input|
   while line = input.gets
     line.split('\n').each do |item|
       if item =~ /Category/
-        puts item.match(/Category\:(.*?)\]/)[1].sub(/\|\*/,'')
+        puts item
       end
     end
   end
