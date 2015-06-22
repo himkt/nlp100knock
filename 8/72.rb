@@ -36,10 +36,18 @@ File.foreach('../data/sentiment.utf8.txt') do |line|
   end
 end
 
-# ネガポジに頻出する単語を素性にしないように
+# TODO: ネガポジに頻出する単語を素性にしないように
 
 if $0 == __FILE__
-  p pos_vector.size
-  p neg_vector.size
-  # p (pos & neg).size
+
+  out = open('../data/features.tsv','w')
+  
+  pos_vector.each do |key,value|
+    out.puts "1\t#{key}\t#{value}"
+  end
+  neg_vector.each do |key,value|
+    out.puts "-1\t#{key}\t#{value}"
+  end
+
+  out.close
 end
