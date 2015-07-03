@@ -16,3 +16,6 @@ DEPENDENCIES
   natto
   redis
   stemmify
+
+BUNDLED WITH
+   1.10.3
