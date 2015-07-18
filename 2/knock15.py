@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # @create = 2015/07/19
+# @modify = 2015/07/19
 
 '''
 15. 末尾のN行を出力
@@ -9,11 +10,14 @@
 確認にはtailコマンドを用いよ．
 '''
 
+import sys
+
+argvs = sys.argv
+n = int(argvs[1])+1
+
 f = open('../data/hightemp.txt','r')
 f_arr = f.read().split("\n")
 f_len = len(f_arr)
-
-n = int(raw_input())+1
 
 for i in range(f_len-n, f_len):
     print f_arr[i]
