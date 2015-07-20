@@ -8,6 +8,8 @@
 記事のカテゴリ名を（行単位ではなく名前で）抽出せよ．
 '''
 
+import re
+
 for line in open('../data/jawiki-country-uk.txt', 'r'):
     con = re.search(re.compile(u"\[\[Category\:(.*?)\]\]"), line)
     if con:
