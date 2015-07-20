@@ -8,8 +8,6 @@
 記事中でカテゴリ名を宣言している行を抽出せよ．
 '''
 
-import re
-
 for line in open('../data/jawiki-country-uk.txt', 'r'):
     if re.search(re.compile(u"\[\[Category\:(.*?)\]\]"), line):
         print line
