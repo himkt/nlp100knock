@@ -15,5 +15,26 @@
 '''
 
 
-for line in open('../data/neko.txt.mecab', 'r'):
-    dic = {}
+
+def knock30():
+
+    sentense_morph_list = []
+    morph_mapping = {}
+
+    for line in open('../data/neko.mecab', 'r'):
+        line = line.rstrip()
+    
+        if line == 'EOS':
+            sentense_morph_list.append(morph_mapping)
+            morph_mapping = {}
+            continue
+    
+        elements = line.split("\t")
+        morph_mapping[elements[1]] = elements[0]
+    
+    return sentense_morph_list
+
+if __name__ == '__main__':
+
+    sentense_morph_list = knock30()
+    print len(sentense_morph_list)
