@@ -1,4 +1,8 @@
-#nlp100knock / 言語処理100本ノック
+# nlp100knock / 言語処理100本ノック
+
+# Notice
+
+___Now, I am working on nlp-100knock with [python](https://github.com/himkt/nlp-100knock-python)___
 
 This is my repository of achievement on nlp100knock  
 
