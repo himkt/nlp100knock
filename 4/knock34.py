@@ -10,11 +10,6 @@
 
 import knock30
 
-
-def extract_noun_phrase():
-
-    return True
-
 sentense_morph_list = knock30.knock30()
 
 for morph_list in sentense_morph_list:
