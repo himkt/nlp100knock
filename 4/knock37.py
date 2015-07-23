@@ -22,10 +22,8 @@ if __name__ == '__main__':
     data = numpy.array(count.most_common(10))
 
     Px = range(len(data))
-    fig = plt.figure()
-    plt.savefig("plt_retest49.eps")
-    plt.xticks(Px, map(lambda x: x.decode('utf-8'), data[:,0]))
-
     Py = map(lambda y: int(y), data[:,1])
 
-    plt.plot(Px, Py)
+    plt.xticks(Px, map(lambda x: x.decode('utf-8'), data[:,0]))
+    plt.bar(Px, Py)
+    plt.show()
