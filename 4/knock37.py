@@ -26,4 +26,9 @@ if __name__ == '__main__':
 
     plt.xticks(Px, map(lambda x: x.decode('utf-8'), data[:,0]))
     plt.bar(Px, Py)
+
+    # 日本語出力失敗: ファイルに保存する場合のみ
+    # plt.show()は成功する
+    # plt.savefig("knock37.eps", dpi=150)
     plt.show()
+
