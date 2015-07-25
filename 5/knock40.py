@@ -27,8 +27,8 @@ class Morph:
 
 def knock40():
 
-    morph_sentense_list = []
-    morph_list = []
+    morphs_list = []
+    morphs = []
 
     for line in open('../data/neko.cabocha', 'r'):
     
@@ -37,25 +37,25 @@ def knock40():
             surface, other = line.split("\t")
             elements = other.split(",")
             morph = Morph(surface, elements[6], elements[0], elements[1])
-            morph_list.append(morph)
+            morphs.append(morph)
     
         elif "EOS" in line:
     
-            if len(morph_list) > 1: 
+            if len(morphs) > 1: 
     
-                morph_sentense_list.append(morph_list)
+                morphs_list.append(morphs)
                
-            morph_list = []
+            morphs = []
 
-    return morph_sentense_list
-
-
+    return morphs_list
 
 
 
-morph_sentense_list = knock40()
+if __name__ == '__main__':
 
-for morph in morph_sentense_list[2]:
+    morphs_list = knock40()
 
-    print morph.surface,
+    for morph in morphs_list[2]:
+
+        print morph.surface,
 
