@@ -36,9 +36,9 @@ class Chunk:
 
 def knock41():
 
-    chunk_list = []
+    chunks_list = []
+    chunks = {}
     morphs_list = []
-    morphs = []
     srcs = {}
 
     for line in open('../data/neko.cabocha', 'r'):
@@ -48,18 +48,14 @@ def knock41():
             surface, other = line.split("\t")
             elements = other.split(",")
             morph = Morph(surface, elements[6], elements[0], elements[1])
-            morphs.append(morph)
+            chunks[chunk_no].append(morph)
     
         elif "EOS" in line:
     
-            if len(morphs) > 1: 
-    
-                1
-                chunk.morphs = morphs
-                chunk_list.append(chunk)
+            chunks_list.append(chunks)
                 # Chunk(morphs, dst, srcs)
                
-            morphs = []
+            chunks = {}
             srcs   = {}
 
         else:
@@ -67,6 +63,7 @@ def knock41():
             elements = line.split(" ")
             chunk_no = elements[1]
             dst      = elements[2][:-1]
+            chunks[chunk_no] = list()
 
             if dst != '-1':
 
@@ -79,17 +76,17 @@ def knock41():
                     srcs[dst] = list()
                     srcs[dst].append(chunk_no)
 
-            chunk = Chunk([], dst, srcs)
+            chunks[chunk_no].append(Chunk([], dst, srcs))
 
-    return chunk_list
-
-
+    return chunks_list
 
 
-chunk_list = knock41()
+
+
+chunks_list = knock41()
+
+print chunks_list[0]
 
 chunk = chunk_list[7]
 
 
-
-print chunk.morphs
