@@ -37,56 +37,41 @@ class Chunk:
 def knock41():
 
     chunks_list = []
-    chunks = {}
-    morphs_list = []
+    chunks = []
     srcs = {}
+    import re
 
     for line in open('../data/neko.cabocha', 'r'):
-    
-        if "\t" in line:
-    
-            surface, other = line.split("\t")
-            elements = other.split(",")
-            morph = Morph(surface, elements[6], elements[0], elements[1])
-            chunks[chunk_no].append(morph)
-    
-        elif "EOS" in line:
-    
-            chunks_list.append(chunks)
-                # Chunk(morphs, dst, srcs)
-               
-            chunks = {}
-            srcs   = {}
-
-        else:
-
+        if re.search(r"^\*", line):
             elements = line.split(" ")
-            chunk_no = elements[1]
+            chunk_no = int(elements[1])
             dst      = elements[2][:-1]
-            chunks[chunk_no] = list()
+            chunks.append(Chunk([], dst, srcs))
 
             if dst != '-1':
-
                 try:
-
                     srcs[dst].append(chunk_no)
-
                 except:
-
                     srcs[dst] = list()
                     srcs[dst].append(chunk_no)
 
-            chunks[chunk_no].append(Chunk([], dst, srcs))
+        elif "\t" in line:
+            surface, other = line.split("\t")
+            elements = other.split(",")
+            morph = Morph(surface, elements[6], elements[0], elements[1])
+            chunks[chunk_no].morphs.append(morph)
+
+        elif "EOS" in line:
+            if len(chunks) == 0: continue
+            chunks_list.append(chunks)
+            chunks = []
 
     return chunks_list
+    
 
-
-
-
-chunks_list = knock41()
-
-print chunks_list[0]
-
-chunk = chunk_list[7]
-
-
+if __name__ == '__main__':
+    chunks_list = knock41()
+    for chunk in chunks_list[7]:
+        for morph in chunk.morphs:
+            print morph.surface,
+        print "/"
