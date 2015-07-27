@@ -65,13 +65,17 @@ def knock41():
             if len(chunks) == 0: continue
             chunks_list.append(chunks)
             chunks = []
+            srcs = {}
 
     return chunks_list
     
 
 if __name__ == '__main__':
     chunks_list = knock41()
-    for chunk in chunks_list[7]:
+    for chunk, index in zip(chunks_list[7], xrange(len(chunks_list[7]))):
+        print "srcs: %s" % chunk.srcs
+        print "index: %s" % index
+        print "dst: %s" % chunk.dst
         for morph in chunk.morphs:
             print morph.surface,
         print "/"
