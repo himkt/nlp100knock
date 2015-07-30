@@ -15,7 +15,7 @@ from knock50 import knock50
 import re
 
 def knock51(sentense):
-    return [re.sub("\.|\,|\'","", i) for i in sentense.split()]
+    return [re.sub("\.|\,|\'|\(|\)","", i) for i in sentense.split()]
 
 if __name__ == '__main__':
 
