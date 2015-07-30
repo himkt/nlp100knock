@@ -16,6 +16,8 @@ from knock50 import knock50
 from knock51 import knock51
 from stemming.porter2 import stem
 
+def knock52(word):
+    return stem(word)
 
 if __name__ == '__main__':
 
@@ -24,5 +26,5 @@ if __name__ == '__main__':
     
     for sentense in sentenses:
         for word in knock51(sentense):
-            print stem(word)
+            print knock52(word)
 
