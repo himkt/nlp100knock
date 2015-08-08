@@ -13,7 +13,6 @@ sentiment.txtを作成したら，正例（肯定的な文）の数と負例（�
 import random
 
 def knock70():
-
     neg = ["-1 %s" % line.rstrip() for line in open('../data/rt-polarity.neg','r')]
     pos = ["+1 %s" % line.rstrip() for line in open('../data/rt-polarity.pos','r')]
     pol = neg+pos
@@ -21,5 +20,13 @@ def knock70():
     return pol
 
 pol = knock70()
-print len(filter(lambda x: x[:2] == '+1', pol))
-print len(filter(lambda x: x[:2] == '-1', pol))
+
+output = open('../data/sentiment.txt','w')
+
+for item in pol:
+    output.write("%s\n" % item)
+
+output.close()
+
+print "pos: %s" % len(filter(lambda x: x[:2] == '+1', pol))
+print "neg: %s" % len(filter(lambda x: x[:2] == '-1', pol))
