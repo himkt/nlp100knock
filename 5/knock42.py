@@ -23,7 +23,9 @@ def knock42(chunks):
             result.append(phrase)
     return result
 
-chunks_list = knock41.knock41()
-for chunks in chunks_list:
-    for phrase in knock42(chunks):
-        print phrase
+if __name__ == '__main__':
+
+    chunks_list = knock41.knock41()
+    for chunks in chunks_list:
+        for phrase in knock42(chunks):
+            print phrase
