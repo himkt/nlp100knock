@@ -13,12 +13,17 @@
 import knock41
 
 def knock42(chunks):
+    result = []
     for chunk in chunks:
         if chunk.dst != '-1':
-            print ''.join([morph.surface for morph in chunk.morphs if morph.pos != '記号']),
-            print '\t',
-            print ''.join([morph.surface for morph in chunks[int(chunk.dst)].morphs if morph.pos != '記号'])
+            phrase = ''
+            phrase += ''.join([morph.surface for morph in chunk.morphs if morph.pos != '記号'])
+            phrase += '\t'
+            phrase += ''.join([morph.surface for morph in chunks[int(chunk.dst)].morphs if morph.pos != '記号'])
+            result.append(phrase)
+    return result
 
 chunks_list = knock41.knock41()
 for chunks in chunks_list:
-    knock42(chunks)
+    for phrase in knock42(chunks):
+        print phrase
