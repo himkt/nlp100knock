@@ -12,10 +12,8 @@ import re
 from nltk.corpus import stopwords
 
 def knock71(sentence):
-    stop_list = ['is', 'am', 'be', 'I', 'you', 'he', 'she']
     words = [word.lower() for word in re.sub("[\.\,\!\?;\:\(\)\[\]\'\"]$", '', sentence.rstrip()).split()]
     result = set(words).intersection(set(stopwords.words('english')))
     return True if len(result) != 0 else False
-
 
 print knock71("I am a pen.")
