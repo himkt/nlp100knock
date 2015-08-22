@@ -24,12 +24,12 @@ def knock72():
         for word in words:
             features.append([label,stem(word)])
 
-    return numpy.array(features)
+    return features
 
 
 if __name__ == '__main__':
 
     features = knock72()
-    
+
     print len([feature for feature in features if feature[0] == '-1'])
     print len([feature for feature in features if feature[0] == '+1'])
