@@ -14,15 +14,19 @@ import numpy
 from nltk.corpus import stopwords
 from stemming.porter2 import stem
 
+
+def stemming(sentence):
+    words = [stem(word.lower()) for word in re.sub("[\.\,\!\?;\:\(\)\[\]\'\"]$", '', sentence.rstrip()).split()]
+    return words
+
 def knock72():
 
     features = []
     
     for line in open('../data/sentiment.txt', 'r'):
         label = line[:2]
-        words = [word.lower() for word in re.sub("[\.\,\!\?;\:\(\)\[\]\'\"]$", '', line[3:].rstrip()).split()]
-        for word in words:
-            features.append([label,stem(word)])
+        for word in stemming(line[3:]):
+            features.append([label,word])
 
     return features
 
