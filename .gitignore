@@ -1,4 +1,10 @@
-*.pyc
 .*
-artist.json
 !.gitignore
+artist.json
+
+# for ruby
+vendor
+bundle
+
+# for python
+*.pyc

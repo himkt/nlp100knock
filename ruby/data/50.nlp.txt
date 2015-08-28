@@ -1,0 +1,75 @@
+From Wikipedia, 
+Natural language processing (NLP) is a field of computer science, 
+As such, 
+NLP is related to the area of humani-computer interaction. 
+Many challenges in NLP involve natural language understanding, 
+The history of NLP generally starts in the 1950s, 
+In 1950, 
+Alan Turing published an article titled "Computing Machinery and Intelligence" which proposed what is now called the Turing test as a criterion of intelligence.
+The Georgetown experiment in 1954 involved fully automatic translation of more than sixty Russian sentences into English. 
+The authors claimed that within three or five years, 
+However, 
+ALPAC report in 1966, 
+Little further research in machine translation was conducted until the late 1980s, 
+Some notably successful NLP systems developed in the 1960s were SHRDLU, 
+ELIZA, 
+Rogerian psychotherapist, 
+Joseph Weizenbaum between 1964 to 1966. 
+Using almost no information about human thought or emotion, 
+ELIZA sometimes provided a startlingly human-like interaction. 
+When the "patient" exceeded the very small knowledge base, 
+ELIZA might provide a generic response, 
+My head hurts" with "Why do you say your head hurts?".
+During the 1970s many programmers began to write 'conceptual ontologies', 
+Examples are MARGIE (Schank, 
+SAM (Cullingford, 
+PAM (Wilensky, 
+TaleSpin (Meehan, 
+QUALM (Lehnert, 
+Politics (Carbonell, 
+Plot Units (Lehnert 1981). 
+During this time, 
+PARRY, 
+Racter, 
+Jabberwacky.
+Up to the 1980s, 
+NLP systems were based on complex sets of hand-written rules. 
+Starting in the late 1980s, 
+NLP with the introduction of machine learning algorithms for language processing. 
+This was due to both the steady increase in computational power resulting from Moore's Law and the gradual lessening of the dominance of Chomskyan theories of linguistics (e.g. 
+Some of the earliest-used machine learning algorithms, 
+However, 
+Part of speech tagging introduced the use of Hidden Markov Models to NLP, 
+The cache language models upon which many speech recognition systems now rely are examples of such statistical models. 
+Such models are generally more robust when given unfamiliar input, 
+Many of the notable early successes occurred in the field of machine translation, 
+IBM Research, 
+These systems were able to take advantage of existing multilingual textual corpora that had been produced by the Parliament of Canada and the European Union as a result of laws calling for the translation of all governmental proceedings into all official languages of the corresponding systems of government. 
+However, 
+As a result, 
+Recent research has increasingly focused on unsupervised and semi-supervised learning algorithms. 
+Such algorithms are able to learn from data that has not been hand-annotated with the desired answers, 
+Generally, 
+However, 
+World Wide Web), 
+Modern NLP algorithms are based on machine learning, 
+The paradigm of machine learning is different from that of most prior attempts at language processing. 
+Prior implementations of language-processing tasks typically involved the direct hand coding of large sets of rules. 
+The machine-learning paradigm calls instead for using general learning algorithms - often, 
+A corpus (plural, 
+Many different classes of machine learning algorithms have been applied to NLP tasks. 
+These algorithms take as input a large set of "features" that are generated from the input data. 
+Some of the earliest-used algorithms, 
+Increasingly, 
+Such models have the advantage that they can express the relative certainty of many different possible answers rather than only one, 
+The learning procedures used during machine learning automatically focus on the most common cases, 
+Automatic learning procedures can make use of statistical inference algorithms to produce models that are robust to unfamiliar input (e.g. 
+Generally, 
+Systems based on automatically learning the rules can be made more accurate simply by supplying more input data. 
+However, 
+In particular, 
+However, 
+The subfield of NLP devoted to learning approaches is known as Natural Language Learning (NLL) and its conference CoNLL and peak body SIGNLL are sponsored by ACL, 
+Computational Linguistics and Language Acquisition. 
+When the aims of computational language learning research is to understand more about human language acquisition, 
+NLL overlaps into the related field of Computational Psycholinguistics.
