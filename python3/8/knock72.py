@@ -5,18 +5,29 @@ from sklearn.feature_extraction.text import CountVectorizer
 from numpy import array
 
 
+'''
+72. 素性抽出
+
+極性分析に有用そうな素性を各自で設計し，
+学習データから素性を抽出せよ．
+素性としては，レビューからストップワードを除去し，
+各単語をステミング処理したものが最低限のベースラインとなるであろう．
+'''
+
+
 def vectorize(features):
-    y = list()
     X = list()
+    y = list()
+    cv = CountVectorizer()
+
     for feature in features:
         y.append(1 if feature[0:2] == '+1' else -1)
         X.append(feature[3:])
 
-    cv = CountVectorizer()
     X = cv.fit_transform(X)
     y = array(y)
-
     return (X, y)
+
 
 if __name__ == '__main__':
     features = init()
