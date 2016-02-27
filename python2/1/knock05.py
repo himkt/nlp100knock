@@ -31,7 +31,7 @@ def ngram(n, mode, string):
 
 if __name__ == '__main__':
     # n = raw_input("n: ").decode("utf-8")
-    n = 3
+    n = 2
     string = "I am an NLPer"
     # string = raw_input("string: ").decode('utf-8')
     # mode = raw_input("mode: ").decode('utf-8')
