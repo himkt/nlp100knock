@@ -14,19 +14,23 @@ from numpy.random import random
 '''
 
 
+# cost function
 def J(W, X, y):
     return y.T.dot(log(h(W, X))) + (1-y).T.dot(log(1-h(W, X)))
 
 
+# sigmoid function
 def h(W, X):
     z = X.dot(W)
     return 1 / (1 + exp(z))
 
 
+# compute gradient
 def grad(W, X, y):
     return X.T.dot(h(W, X) - y)
 
 
+# check if iteration is converged
 def check_convergence(W, W_tmp, X, y):
     return abs(J(W, X, y)) - J(W_tmp, X, y) < 0.1
 
