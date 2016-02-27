@@ -21,7 +21,7 @@ def typoglycemia(string):
     input_text_to_arr = input_text.split()
 	
     for word in input_text_to_arr:
-        if len(word) >= 4:
+        if len(word) > 4:
             top = word[0]
             tail = word[-1]
             text_list = list(word[1:-1])
