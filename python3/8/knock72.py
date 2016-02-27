@@ -2,7 +2,7 @@
 
 from knock70 import init
 from sklearn.feature_extraction.text import CountVectorizer
-from numpy import array
+from numpy import array, shape
 
 
 '''
@@ -21,15 +21,17 @@ def vectorize(features):
     cv = CountVectorizer()
 
     for feature in features:
-        y.append(1 if feature[0:2] == '+1' else -1)
+        y.append(1 if feature[0:2] == '+1' else 0)
         X.append(feature[3:])
 
     X = cv.fit_transform(X)
-    y = array(y)
-    return (X, y)
+    y = array([y]).T
+    return (X.toarray(), y)
 
 
 if __name__ == '__main__':
     features = init()
     X, y = vectorize(features)
     print(X, y)
+
+    print(shape(X))
