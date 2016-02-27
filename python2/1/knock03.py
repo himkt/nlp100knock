@@ -13,6 +13,6 @@ string = "Now I need a drink, alcoholic of course, after the heavy lectures invo
 
 array = string.split(' ')
 
-array_len = [len(word) for word in array]
+array_len = [len(word.rstrip('.,')) for word in array]
 
-print array_len
+print(array_len)
