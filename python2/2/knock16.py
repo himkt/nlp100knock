@@ -17,7 +17,7 @@ argvs = sys.argv
 n = int(argvs[1])
 f = open('../data/hightemp.txt', 'r')
 
-f_arr          = f.read().split("\n")
+f_arr          = f.read().rstrip().split("\n")
 each_file_size = int(math.ceil(float(len(f_arr))/n))
 
 for file_index in xrange(n):
