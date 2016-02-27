@@ -13,25 +13,27 @@ n-gramを作る関数を作成せよ．
 
 
 def ngram(n, mode, string):
-	
+
     if mode == 'char':
         feature_list = [char for char in string]
     else:
         feature_list = string.split()
-		
+
     ngram_list = []
-    for i in xrange(len(feature_list)):
-        if len(feature_list) > i+1:
-            ngram_list.append("%s%s" % (feature_list[i], feature_list[i+1]))
-    
+    for i in xrange(len(feature_list) - n+1):
+        temp_ngram_list = []
+        for j in xrange(n):
+            temp_ngram_list.append(feature_list[i+j])
+            
+        ngram_list.append(''.join(temp_ngram_list))
     return ngram_list
 
 
 if __name__ == '__main__':
     # n = raw_input("n: ").decode("utf-8")
-    n = 2
+    n = 3
     string = "I am an NLPer"
     # string = raw_input("string: ").decode('utf-8')
     # mode = raw_input("mode: ").decode('utf-8')
-    print ngram(n, 'word', string)
-    print ngram(n, 'char', string)
+    print(ngram(n, 'word', string))
+    print(ngram(n, 'char', string))
