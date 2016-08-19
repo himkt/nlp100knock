@@ -1,3 +1,7 @@
 # Python3
 
-knock70のデータについて，nkfなどで文字コードを整える必要がある．(本リポジトリのデータはutf-8に変換した)
+やっぱりpythonでしょ！！！
+
+## Reference
+
+- https://github.com/lethe2211/nlp100

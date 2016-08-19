@@ -1,0 +1,63 @@
+GIT
+  remote: git@github.com:ruby-numo/narray.git
+  revision: 93c02563718c4bebfd659ab17ecc595d1a5c8743
+  specs:
+    numo-narray (0.9.0.2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    backports (3.6.8)
+    bond (0.5.1)
+    countries (1.2.5)
+      currencies (~> 0.4.2)
+      i18n_data (~> 0.7.0)
+    currencies (0.4.2)
+    data_uri (0.1.0)
+    ffi (1.9.14)
+    gnuplot (2.6.2)
+    i18n_data (0.7.0)
+    iruby (0.2.9)
+      bond (~> 0.5)
+      data_uri (~> 0.1)
+      mimemagic (~> 0.3)
+      multi_json (~> 1.11)
+    mimemagic (0.3.2)
+    multi_json (1.12.1)
+    natto (1.1.1)
+      ffi (>= 1.9.0)
+    nmatrix (0.2.3)
+      packable (~> 1.3, >= 1.3.5)
+    nyaplot (0.1.6)
+    packable (1.3.8)
+      backports
+    rbczmq (1.7.9)
+    rblearn (0.3.1)
+      numo-narray
+      stemmify
+      stopwords
+    redis (3.3.1)
+    ruby-stemmer (0.9.6)
+    stemmify (0.0.2)
+    stopwords (0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  countries
+  gnuplot
+  iruby
+  natto
+  nmatrix
+  numo-narray!
+  nyaplot
+  rbczmq
+  rblearn
+  redis
+  ruby-stemmer
+  stemmify
+  stopwords
+
+BUNDLED WITH
+   1.12.5

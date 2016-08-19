@@ -15,4 +15,3 @@ f_col2 = open('./col2.txt','r')
 
 for col1, col2 in zip(f_col1, f_col2):
     print "%s\t%s" % (col1.rstrip(),col2.rstrip())
-
